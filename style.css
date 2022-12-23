@@ -1,5 +1,6 @@
 :root {
     --clr-accent-400: hsl(12, 88%, 59%);
+    --clr-accent-300: hsl(12, 88%, 75%);
     --clr-accent-100: hsl(13, 100%, 96%);
     --clr-primary-400: hsl(228, 39%, 23%);
     --clr-neutral-900: hsl(232, 12%, 13%);
@@ -22,6 +23,15 @@
     --fs-secondary-heading: var(--fs-700);
     --fs-nav: var(--fs-500);
     --fs-button: var(--fs-300);
+    --size-100: .125rem;
+    --size-200: .5rem;
+    --size-300: .75rem;
+    --size-400: 1rem;
+    --size-500: 1.25rem;
+    --size-600: 2rem;
+    --size-700: 3rem;
+    --size-800: 4rem;
+    --size-900: 5rem;
 }
 
 @media (min-width:50em) {
@@ -193,10 +203,12 @@ h6 {
 
 .fs-primary-heading {
     font-size: var(--fs-primary-heading);
+    line-height: 1.1;
 }
 
 .fs-secondary-heading {
     font-size: var(--fs-secondary-heading);
+    line-height: 1.1;
 }
 
 .fs-300 {
@@ -215,6 +227,14 @@ h6 {
     font-size: var(--fs-6 00);
 }
 
+.padding-block-900 {
+    padding-block: var(--size-900);
+}
+
+.padding-block-700 {
+    padding-block: var(--size-700);
+}
+
 .container {
     --max-width: 1110px;
     --padding: 1rem;
@@ -230,6 +250,7 @@ h6 {
 @media (min-width:50em) {
     .even-columns {
         grid-auto-flow: column;
+        grid-auto-columns: 1fr;
     }
 }
 
@@ -237,4 +258,21 @@ body {
     font-size: var(--fs-body);
     font-family: var(--ff-body);
     color: var(--clr-primary-400);
+}
+
+.button {
+    cursor: pointer;
+    text-decoration: none;
+    border: 0;
+    border-radius: 100vmax;
+    padding: 1em 2.5em;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-button);
+    color: white;
+    background-color: var(--clr-accent-400);
+}
+
+.button:hover,
+.button:focus-visible {
+    background-color: var(--clr-accent-300);
 }
