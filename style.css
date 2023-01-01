@@ -321,11 +321,44 @@ body {
     display: none;
 }
 
+.nav-list {
+    font-size: var(--size-nav);
+}
+
 @media (max-width:50em) {
     .primary-navigation {
         display: none;
+        position: absolute;
+        padding: var(--size-700);
+        inset: 7rem var(--size-400) auto;
+        background: var(--clr-neutral-100);
+        border-radius: var(--size-100);
+        box-shadow: 0 0 0.75em rgb(0, 0, 0.05);
+    }
+    .primary-navigation::after {
+        content: '';
+        position: absolute;
+    }
+    .nav-list {
+        display: grid;
+        gap: var(--size-600);
+        text-align: center;
+        font-weight: var(--fw-bold);
+    }
+    .nav-list a {
+        text-decoration: none;
+        color: var(--clr-primary-400);
+    }
+    .nav-list a:hover,
+    .nav-list a:focus {
+        text-decoration: none;
+        color: var(--clr-accent-400);
+    }
+    .primary-navigation[data-visible] {
+        display: block;
     }
     .mobile-nav-toggle {
+        display: block;
         cursor: pointer;
         background: transparent;
         border: 0;
