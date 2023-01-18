@@ -15,7 +15,11 @@
     <header class="primary-header">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="#"><img src="images/logo.svg" alt="Manage"></a>
+                <a href="#">
+                    <svg class="logo" width="146" height="24">
+                        <use xlink:href="images/logo.svg#logo"></use>
+                    </svg>
+                </a>
                 <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
                     <img class="icon-hamburger" src="images/icon-hamburger.svg" alt="" aria-hidden="true">
                     <img class="icon-close" src="images/icon-close.svg" alt="" aria-hidden="true">
@@ -102,26 +106,50 @@
             </div>
         </section>
     </main>
-    <footer class="padding-block-700 bg-neutral-900 text-neutral-100">
+    <footer class="primary-footer | padding-block-700 bg-neutral-900 text-neutral-100">
         <div class="container">
-            <div class="even-columns">
+            <div class="primary-footer-wrappper | even-columns">
                 <div>
-                    <a href="#"><img src="images/logo.svg" alt="logo"></a>
-                    <ul role="list" aria-label="Social links">
+                    <a href="#" aria-label="home">
+                        <svg class="logo" width="146" height="24">
+                            <use xlink:href="images/logo.svg#logo"></use>
+                        </svg>
+                    </a>
+
+                    <ul class="social-list" role="list" aria-label="Social links">
                         <li>
-                            <a aria-label="Facebook" href="#"></a>
+                            <a aria-label="facebook" href="#">
+                                <svg class="social-icon">
+                              <use xlink:href="images/social-icons.svg#icon-facebook"></use>
+                            </svg></a>
                         </li>
                         <li>
-                            <a aria-label="Youtube" href="#"></a>
+                            <a aria-label="youtube" href="#">
+                                <svg class="social-icon">
+                              <use xlink:href="images/social-icons.svg#icon-youtube"></use>
+                            </svg>
+                            </a>
                         </li>
                         <li>
-                            <a aria-label="Twitter" href="#"></a>
+                            <a aria-label="twitter" href="#">
+                                <svg class="social-icon">
+                              <use xlink:href="images/social-icons.svg#icon-twitter"></use>
+                            </svg>
+                            </a>
                         </li>
                         <li>
-                            <a aria-label="Pinterest" href="#"></a>
+                            <a aria-label="pinterest" href="#">
+                                <svg class="social-icon">
+                              <use xlink:href="images/social-icons.svg#icon-pinterest"></use>
+                            </svg>
+                            </a>
                         </li>
                         <li>
-                            <a aria-label="Instagram" href="#"></a>
+                            <a aria-label="instragram" href="#">
+                                <svg class="social-icon">
+                              <use xlink:href="images/social-icons.svg#icon-instagram"></use>
+                            </svg>
+                            </a>
                         </li>
                     </ul>
                 </div>
