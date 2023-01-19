@@ -291,24 +291,32 @@ ul {
 
 .primary-footer-wrapper {
     display: grid;
+    gap: var(--size-700);
     grid-template-areas: "form" "nav" "logo-social";
 }
 
-.primary-footer-wrapper> :nth-child(1) {
+@media (min-width:50em) {
+    .primary-footer-wrapper {
+        grid-template-areas: "logo-social nav form";
+    }
+}
+
+.primary-footer-logo-social {
     grid-area: logo-social;
 }
 
-.primary-footer-wrapper> :nth-child(2) {
+.primary-footer-nav {
     grid-area: nav;
 }
 
-.primary-footer-wrapper> :nth-child(3) {
+.primary-footer-form {
     grid-area: form;
 }
 
-.primary-footer-wrapper>* {
-    outline: 2px solid red;
-    margin-inline: auto;
+@media (max-width:50em) {
+    .primary-footer-wrapper>* {
+        margin-inline: auto;
+    }
 }
 
 
