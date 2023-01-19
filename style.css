@@ -295,14 +295,12 @@ ul {
     grid-template-areas: "form" "nav" "logo-social";
 }
 
-@media (min-width:50em) {
-    .primary-footer-wrapper {
-        grid-template-areas: "logo-social nav form";
-    }
-}
-
 .primary-footer-logo-social {
     grid-area: logo-social;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: var(--size-700);
 }
 
 .primary-footer-nav {
@@ -311,6 +309,16 @@ ul {
 
 .primary-footer-form {
     grid-area: form;
+}
+
+@media (min-width:50em) {
+    .primary-footer-wrapper {
+        grid-template-areas: "logo-social nav form";
+    }
+    .primary-footer-logo-social {
+        align-items: flex-start;
+        gap: var(--size-700);
+    }
 }
 
 @media (max-width:50em) {
