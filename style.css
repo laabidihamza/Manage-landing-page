@@ -162,10 +162,6 @@ p[data-width="wide"] {
     max-width: 42ch;
 }
 
-ul {
-    list-style-type: none;
-}
-
 
 /*button*/
 
@@ -353,6 +349,10 @@ input:where([type="text"], [type="email"]) {
     gap: clamp(var(--size-200), 30vw, var(--size-900));
 }
 
+.footer-nav ul {
+    list-style: none;
+}
+
 .footer-nav a {
     color: var(--clr-neutral-100);
     text-decoration: none;
@@ -368,6 +368,7 @@ input:where([type="text"], [type="email"]) {
 .social-list {
     display: flex;
     gap: var(--size-600);
+    list-style-type: none;
 }
 
 .social-icon {
@@ -416,6 +417,21 @@ input:where([type="text"], [type="email"]) {
 }
 
 
+/*Numbered items*/
+
+.numbered-items {
+    counter-reset: count;
+}
+
+.numbered-items li {
+    counter-increment: count;
+}
+
+.numbered-items li::before {
+    content: counter(count);
+}
+
+
 /* Utility Classes*/
 
 .visually-hidden {
@@ -451,12 +467,6 @@ input:where([type="text"], [type="email"]) {
 .justify-self-end {
     justify-self: end;
 }
-
-
-/*.flow>*+* {
-    //set border
-    outline: 3px solid lime;
-}*/
 
 :where(.flow> :not(:first-child)) {
     margin-top: var(--flow-spacer, 3em);
