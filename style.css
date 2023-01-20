@@ -189,6 +189,10 @@ ul {
     color: var(--clr-accent-400);
 }
 
+.button[data-shadow="none"] {
+    box-shadow: none;
+}
+
 .button:hover,
 .button:focus-visible {
     background-color: var(--clr-accent-300);
@@ -309,6 +313,19 @@ ul {
 
 .primary-footer-form {
     grid-area: form;
+    display: grid;
+    align-content: space-between;
+}
+
+.primary-footer form {
+    display: flex;
+    gap: var(--size-200);
+}
+
+input:where([type="text"], [type="email"]) {
+    border-radius: 100vw;
+    border: 0;
+    padding: var(--size-200) var(--size-300);
 }
 
 @media (min-width:50em) {
@@ -317,6 +334,7 @@ ul {
     }
     .primary-footer-logo-social {
         align-items: flex-start;
+        justify-content: space-between;
         gap: var(--size-700);
     }
 }
@@ -332,6 +350,7 @@ ul {
 
 .footer-nav {
     columns: 2;
+    gap: clamp(var(--size-200), 30vw, var(--size-900));
 }
 
 .footer-nav a {
