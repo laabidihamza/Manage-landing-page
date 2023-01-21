@@ -427,8 +427,43 @@ input:where([type="text"], [type="email"]) {
     counter-increment: count;
 }
 
-.numbered-items li::before {
-    content: counter(count);
+.numbered-items div {
+    display: grid;
+    position: relative;
+    align-items: center;
+    column-gap: var(--size-400);
+    grid-template-columns: min-content 1fr;
+}
+
+.numbered-items__title::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    grid-column: 1/ -1;
+    grid-row: 1/ 2;
+    background-color: orange;
+}
+
+.numbered-items__body {
+    grid-column: 1 / -1;
+}
+
+@media (min-width:30em) {
+    .numbered-items__body {
+        grid-column: 2 /-1;
+    }
+}
+
+.numbered-items div::before {
+    content: "0" counter(count);
+    display: flex;
+    align-items: center;
+    color: var(--clr-neutral-100);
+    font-weight: var(--fw-bold);
+    background-color: var(--clr-accent-400);
+    padding: 0 var(--size-500);
+    height: 40px;
+    border-radius: 100vw;
 }
 
 
