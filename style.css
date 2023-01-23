@@ -568,18 +568,26 @@ input:where([type="text"], [type="email"]) {
 }
 
 
-/*.a11y-slider-prev {
-    position: relative;
-    color: transparent;
+/* image-with-blob-bg */
+
+@media (max-width:50em) {
+    .hero__image {
+        order: -1;
+    }
 }
 
-.a11y-slider-prev::after {
-    content: "<";
-    display: block;
-    color: black;
-    left: 0;
+.hero__image::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: 0;
     top: 0;
-}*/
+    width: 380px;
+    aspect-ratio: 1/1.3;
+    background-image: url("images/bg-tablet-pattern.svg");
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}
 
 
 /* Utility Classes*/
