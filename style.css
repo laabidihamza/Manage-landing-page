@@ -242,7 +242,7 @@ p[data-width="wide"] {
 }
 
 @media (max-width:47em) {
-    .primary-header[data-overlay]{
+    .primary-header[data-overlay] {
         position: relative;
         z-index: 999;
     }
@@ -289,7 +289,7 @@ p[data-width="wide"] {
         background-repeat: no-repeat;
         background-position: center;
     }
-    .mobile-nav-toggle[aria-expanded="true"]{
+    .mobile-nav-toggle[aria-expanded="true"] {
         background-image: url('images/icon-close.svg');
     }
 }
@@ -301,36 +301,46 @@ p[data-width="wide"] {
     --logo-color: var(--clr-neutral-100);
 }
 
-.primary-footer-wrapper {
+.primary-footer__wrapper {
     display: grid;
     gap: var(--size-700);
-    grid-template-areas: "form" "nav" "logo-social";
+    justify-content: center;
+    grid-template-areas: "form" "nav" "social" "logo" "copyright";
 }
 
-.primary-footer-logo-social {
+.primary-footer__logo {
+    grid-area: logo;
+}
+
+.primary-footer__form {
+    grid-area: form;
+}
+
+
+/*.primary-footer-logo-social {
     grid-area: logo-social;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
     gap: var(--size-700);
-}
+}*/
 
-.primary-footer-nav {
+.primary-footer__nav {
     grid-area: nav;
 }
 
-.primary-footer-form {
+.primary-footer__form {
     grid-area: form;
-    display: grid;
-    align-content: space-between;
-}
-
-.primary-footer form {
     display: flex;
     gap: var(--size-200);
 }
 
-input:where([type="text"], [type="email"]) {
+.primary-footer__copyright {
+    grid-area: copyright;
+}
+
+input:where([type="text"],
+[type="email"]) {
     border-radius: 100vw;
     border: 0;
     padding: var(--size-200) var(--size-300);
@@ -370,7 +380,8 @@ input:where([type="text"], [type="email"]) {
     text-decoration: none;
 }
 
-.footer-nav a:is(:hover, :focus) {
+.footer-nav a:is(:hover,
+ :focus) {
     color: var(--clr-accent-400);
 }
 
@@ -389,7 +400,8 @@ input:where([type="text"], [type="email"]) {
     fill: var(--clr-neutral-100);
 }
 
-.social-list a:is(:hover, :focus) .social-icon {
+.social-list a:is(:hover,
+ :focus) .social-icon {
     fill: var(--clr-accent-400);
 }
 
@@ -602,17 +614,20 @@ input:where([type="text"], [type="email"]) {
     background-position: bottom left;
 }
 
-@media (min-width:47em){
-    .hero__image::before{
+@media (min-width:47em) {
+    .hero__image::before {
         width: 45%;
     }
 }
 
+
 /*sales points*/
-.sales-points__blog{
-    position:relative ;
+
+.sales-points__blog {
+    position: relative;
 }
-.sales-points__blog::before{
+
+.sales-points__blog::before {
     content: url("images/bg-tablet-pattern.svg");
     zoom: 40%;
     position: absolute;
@@ -621,8 +636,9 @@ input:where([type="text"], [type="email"]) {
     bottom: 120%;
     width: 100px;
 }
-@media (min-width:47em){
-    .sales-points__blog::before{
+
+@media (min-width:47em) {
+    .sales-points__blog::before {
         zoom: 70%;
         position: absolute;
         z-index: -1;
@@ -631,6 +647,7 @@ input:where([type="text"], [type="email"]) {
         width: 100px;
     }
 }
+
 
 /* Utility Classes*/
 
@@ -654,19 +671,38 @@ input:where([type="text"], [type="email"]) {
     margin-inline: auto;
 }
 
-.vertical-align-center {
-    align-items: center;
+.even-columns {
+    display: grid;
+    gap: 1rem;
 }
 
-@media(min-width:47em) {
-    .vertical-slef-end-md {
-        align-items: center;
+@media (min-width:47em) {
+    .even-columns {
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
     }
+}
+
+.vertical-align-center {
+    align-items: center;
 }
 
 .justify-self-end {
     justify-self: end;
 }
+
+@media (min-width: 47em) {
+    .justify-self-end-md {
+        justify-self: end;
+    }
+}
+
+
+/*@media(min-width:47em) {
+    .vertical-self-end-md {
+        align-items: center;
+    }
+}*/
 
 :where(.flow> :not(:first-child)) {
     margin-top: var(--flow-spacer, 3em);
@@ -686,18 +722,6 @@ input:where([type="text"], [type="email"]) {
     }
     .text-center-sm-only p {
         margin-inline: auto;
-    }
-}
-
-.even-columns {
-    display: grid;
-    gap: 1rem;
-}
-
-@media (min-width:47em) {
-    .even-columns {
-        grid-auto-flow: column;
-        grid-auto-columns: 1fr;
     }
 }
 
@@ -794,6 +818,11 @@ input:where([type="text"], [type="email"]) {
 .margin-bottom-700 {
     margin-block-end: var(--size-700);
 }
+
+.margin-top-900 {
+    margin-block-start: var(--size-900);
+}
+
 .mx-auto {
     margin-inline: auto;
 }
