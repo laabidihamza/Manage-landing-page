@@ -305,6 +305,7 @@ p[data-width="wide"] {
     display: grid;
     gap: var(--size-700);
     justify-content: center;
+    align-items: start;
     grid-template-areas: "form" "nav" "social" "logo" "copyright";
 }
 
@@ -314,6 +315,12 @@ p[data-width="wide"] {
 
 .primary-footer__form {
     grid-area: form;
+}
+
+.primary-footer__form {
+    grid-area: form;
+    display: flex;
+    gap: var(--size-200);
 }
 
 
@@ -327,40 +334,7 @@ p[data-width="wide"] {
 
 .primary-footer__nav {
     grid-area: nav;
-}
-
-.primary-footer__form {
-    grid-area: form;
-    display: flex;
-    gap: var(--size-200);
-}
-
-.primary-footer__copyright {
-    grid-area: copyright;
-}
-
-input:where([type="text"],
-[type="email"]) {
-    border-radius: 100vw;
-    border: 0;
-    padding: var(--size-200) var(--size-300);
-}
-
-@media (min-width:47em) {
-    .primary-footer-wrapper {
-        grid-template-areas: "logo-social nav form";
-    }
-    .primary-footer-logo-social {
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: var(--size-700);
-    }
-}
-
-@media (max-width:47em) {
-    .primary-footer-wrapper>* {
-        margin-inline: auto;
-    }
+    margin-inline: auto;
 }
 
 
@@ -368,7 +342,7 @@ input:where([type="text"],
 
 .footer-nav {
     columns: 2;
-    gap: clamp(var(--size-200), 30vw, var(--size-900));
+    gap: clamp(4rem, 10vw, 7rem);
 }
 
 .footer-nav ul {
@@ -385,6 +359,36 @@ input:where([type="text"],
     color: var(--clr-accent-400);
 }
 
+.primary-footer__copyright {
+    grid-area: copyright;
+    text-align: center;
+    opacity: 0.5;
+}
+
+input:where([type="text"],
+[type="email"]) {
+    border-radius: 100vw;
+    border: 0;
+    padding: var(--size-300) var(--size-500);
+    width: max(100%, 14rem);
+}
+
+@media (min-width:47em) {
+    .primary-footer__wrapper {
+        grid-template-areas: "logo nav form" "social nav copyright";
+        grid-template-columns: min-content 1fr min-content;
+    }
+    .primary-footer__copyright {
+        text-align: right;
+    }
+}
+
+@media (max-width:47em) {
+    .primary-footer__wrapper>* {
+        margin-inline: auto;
+    }
+}
+
 
 /*social list*/
 
@@ -398,6 +402,16 @@ input:where([type="text"],
     aspect-ratio: 1;
     width: var(--size-600);
     fill: var(--clr-neutral-100);
+}
+
+@media (min-width:47em) {
+    .social-list {
+        gap: var(--size-300);
+    }
+    .social-icon {
+        width: var(--size-500);
+        max-width: revert;
+    }
 }
 
 .social-list a:is(:hover,
